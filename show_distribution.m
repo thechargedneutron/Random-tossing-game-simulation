@@ -7,8 +7,8 @@ r = randi([1,number_of_people],1,2);
 won = randi([1,2],1,1);
 data(r(1,won),2) = data(r(1,won),2) +1;
 data(r(1,3-won),2) = data(r(1,3-won),2) +1;
-endfor
+end
 freq = data(:,2);
-histogram = hist(freq,no_of_bins);
-plot(histogram);
+t=tabulate(freq);
+bar(t(:,1),t(:,2));
 end
